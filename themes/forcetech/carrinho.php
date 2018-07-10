@@ -103,7 +103,7 @@ endif;
             <table class="table table-responsive">
                 <thead> 
                     <tr>
-                        <th>#</th>
+                        <th>Imagem</th>
                         <th>Produto</th>
                         <th>Preço</th>	
                         <th>Quant</th>	
