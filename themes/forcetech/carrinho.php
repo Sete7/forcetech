@@ -159,7 +159,8 @@ endif;
                                     <option value="sedex">SEDEX</option>
                                 </select>
                             </div>
-                            <input type="submit" name="calcularFrete" value="Calcular Frete" style="margin-top: 8px;">
+<!--                            <input type="submit" name="calcularFrete" value="Calcular Frete" style="margin-top: 8px;">-->
+                            <input type="submit" name="calcularFrete" value="Calcular Frete">
                         </form>
                     </div>
 

@@ -105,7 +105,7 @@ body{
 .box_info{width: 25% ;  float: left;border: 1px solid #cecece;}
 .box_info div{    height:  80px;   text-align: center;  padding: 7px 0;  position: relative;}
 .box_info div h1{width: 80%;margin-bottom: 10px; font-size: 1.2em;font-weight: bold;position: relative;left: 15%;}
-.box_info .box_fa .icone{width: 20%;height: 75px;position: absolute;top: 0; font-size: 1em !important; color: #00c2cc;  left: 10px;    padding: 7px;}
+.box_info .box_fa .icone{width: 50px;height: 75px;position: absolute;top: 0; font-size: 1em !important; color: #00c2cc;  left: 10px;    padding: 7px;}
 .box_info .fa-truck{font-size: 0.9em;}
 .box_info div p{width: 80%; font-size: 1em; position: relative;left: 15%;}
 
@@ -193,7 +193,7 @@ form input[type=submit]:hover{background: #089bad;}
 .div_selos{width: 100%; display: inline-block !important; float: left;}
 .div_selos h1{font-size: 1.5em; margin-bottom: 15px;}
 .div_selos ul li{display: inline;}
-.div_selos ul li a, .div_selos ul li img{width: 95px; float: left; margin-right: 8px;}
+.div_selos ul li a, .div_selos ul li img{width: 85px; float: left; margin-right: 8px;}
 
 .bandeiras{width: 100%; }
 .bandeiras h1{font-size: 1.5em; margin-bottom: 15px; float: left;}

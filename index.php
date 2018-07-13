@@ -243,7 +243,7 @@
                         <h1>Newsletter<span>, gostaria de receber novidades, promoções e dicas </span></h1> 
                     </div>
                     <div class="box_new_b">
-                        <form class="form_news">                                                                    
+                        <form class="form_news" action="mail.php" method="post">                                                                    
                             <input type="email" name="email" class="email" required  placeholder="Digite seu Email"/>                                                                                               
                             <input type="submit" name="submit" class="btn_newsletter" value="Enviar" />                        
                         </form>
@@ -343,7 +343,9 @@
                                 </li>
 
                                 <li>
-                                    <a href="" class="box_selos" ><img src="<?= INCLUDE_PATH; ?>/img/icons/selo-https.png" alt=""/></a>
+                                    <li>
+                                    <a href="" class="box_selos" target="_blank"><img src="<?= INCLUDE_PATH; ?>/img/icons/ssl.jpg" alt=""/></a>
+                                </li>
                                 </li>
                             </ul>                          
                         </div>
