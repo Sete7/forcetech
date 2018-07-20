@@ -14,10 +14,11 @@ body{
     font-size: 0.9em;font-weight: normal; 
     padding-top: 10px;    
 }
-.main_cabecalho .box_usuario div{width: calc(33.33333333333333% - 20px);float: left;}
+.main_cabecalho .box_usuario div{width: calc(50% - 20px);float: left;}
+.box_conta{text-align: right;}
 
 /*-----------------------PESQUISA--------------------------------*/
-.search_form{width: 100%; float: left; margin-top: -38px;}
+.search_form{width: 100%; float: left; margin-top: -100%;}
 .search_form form input[type=text]{width: 80%; float: left; background: url('../img/search.png') no-repeat; background-position: 10px 5px; padding-left: 48px;}
 .search_form form input[type=submit]{width: 20%; float: left; background: #00C2CC; color: #fff; border: 1px solid #00C2CC; }
 
@@ -33,11 +34,11 @@ body{
 .main_nav .logo .box_logo .img_logo{width: 100%;float: left;}
 
 /*----------------------- MAIN MENU PRINCIPAL --------------------------------*/
-.menu{width: calc(30% - 10px);float: right;}
+.menu{width: calc(30% - 10px); text-align: right; float: right; margin-right: 17px;}
 .menu li{display: inline-block;position: relative;left: 30px;padding: 5px;}
 .menu li a{display: block; padding: 5px;font-size: 1.2em;font-weight: bold;}
-.menu li a:hover{color: #ff0000;}
-.menu img{width: 6%; float: left; position: relative; top: 8px; cursor: pointer;}
+/*.menu li a:hover{color: #ff0000;}*/
+.menu img{width: 6%; float: left; position: relative; top: 8px; cursor: pointer; left: 100px;}
 .main_nav_mob{display: none;}
 .menu-abrir{display: none;}
 @media(max-width: 1000px){
@@ -78,14 +79,15 @@ body{
     }
 
 }
-/*.menu_mobile{width: 100%;background: red;float: left;}*/
+.menu_mobile{width: 100%;background: red;float: left;}
 
 
 /*----------------------- MENU PRODUTO --------------------------------*/
 .menu_produtos{width: 100%; background: #ff0000;float: left; padding: 0 14%; text-align: center;}
 .box_menu_pdr{width: 100%;}
 .menu_produtos .box_menu_pdr div{ display: inline-block;padding: 8px 3px;}
-.menu_produtos .box_menu_pdr div:hover{background: rgba(0,0,0,0.5);height: 100% !important;}
+/*.menu_produtos .box_menu_pdr div:hover{background: rgba(0,0,0,0.5);height: 100% !important;}*/
+.menu_produtos .box_menu_pdr div:hover{background: rgba(0,0,0,0.5);}
 .menu_produtos .box_menu_pdr div a{display: block;padding: 5px 5px;color: #fff; font-weight: bold; text-transform: uppercase;}
 
 /*----------------------- SLIDE --------------------------------*/
@@ -167,6 +169,8 @@ body{
 form input[type=email]{width: 80%; float: left; }
 form input[type=submit]{width: 20%; float: left; background: #0c84c8; color: #fff; border: 1px solid #0c84c8; }
 form input[type=submit]:hover{background: #089bad;}
+.form-cep .btn-frete{width: 100%;float: left; background: #0c84c8; color: #fff; border: 1px solid #0c84c8; }
+.form-cep .btn-continuar-c{margin-bottom: 25px;}
 
 /*-------------------------FOOTER--------------------------*/
 .main_footer{float: left;}
@@ -261,7 +265,7 @@ img{max-width: 100%;margin-bottom: 10px;}
 .thumbs img{float: left; width: 20%; padding: 2.5px; cursor: pointer;}
 .thumbs img:hover,
 .thumbs img.active{border: 1px solid #dedede;}
-/*---------------------- PAGE DESCRICAO SINGRE PRODUTO -----------------------------*/
+/*---------------------- PAGE DESCRICAO SINGLE PRODUTO -----------------------------*/
 .single_produto .main-galeria{margin: 10px 0 25px 0;float:left;}
 .box_desc_galery{width: 100%;padding-top: 25px;}
 .box_desc_galery h1{font-size: 1.4em;font-weight: bold;margin-bottom: 25px;}
@@ -271,11 +275,13 @@ img{max-width: 100%;margin-bottom: 10px;}
 .box_desc_galery .btn-blue{margin: 25px 0;}
 
 /*---------------------- PAGE DESCRICAO SINGlE PRODUTO -----------------------------*/
-.box_desc_pdr{width: 100%;float: left;margin: 25px 0;}
+.box_desc_pdr{width: 90%;float: left;margin: 5% 5% 5% 0;}
 .box_desc_pdr .titulo_desc_pdr{font-size: 1.4em;font-weight: bold;}
 .box_desc_pdr .titulo_desc_pdr:after{content: ""; width: 100%;height: 1px; display: block;background: #dedede;margin: 10px 0;}
-.box_desc_pdr p{line-height: 1.5;padding-top: 3px;padding-bottom: 3px;color: #686c6f;}
+.box_desc_pdr .titulo_desc_pdr{font-weight: bold;}
+.box_desc_pdr p{line-height: 1.5;padding-top: 3px;padding-bottom: 3px;color: #686c6f;text-align: justify;}
 .box_desc_pdr p strong{font-weight: bold;}
+.box_desc_pdr img{width: 50%;margin: 10% 25%;}
 .box_desc_pdr .txt_desc{text-align: justify;margin-bottom: 25px;}
 .desc_pdr_a{width: 100%;background: #f9f9f9;border-top: 1px solid #eceeef;border-bottom: 1px solid #eceeef;margin: 5px 0;}
 .main-produto{margin: 10px 0 25px 0;float: left;}
@@ -560,12 +566,14 @@ hr{width: 100%; margin-bottom: 1rem; margin-top: 1rem; border: 1px solid #ccc;}
 }
 
 @media(max-width: 600px ){
-    /*.menu-abrir {position: absolute;  right: 10px; top: 24px;}*/    
-}
-
-@media(max-width: 600px ){
     .menu-abrir {position: absolute;  right: 10px; top: 15px;}    
     .main_cabecalho .box_usuario div { width: 100%; float: left;}
+    
+      
+    /*-------------single-produto---------------------------*/
+    .box_desc_pdr{width: 100%;float: left;margin: 0;padding: 0;}
+    .box_desc_pdr p {padding: 0;text-align: justify;}
+    .box_desc_pdr img{width: 250px;margin: 5%;}
 }
 
 
@@ -628,6 +636,13 @@ hr{width: 100%; margin-bottom: 1rem; margin-top: 1rem; border: 1px solid #ccc;}
     .main_footer section p {width: 100%;text-align: center;}
 
     .product-item { width: 90%;  margin: 0 10%;}
+	
+	/*------------------------CARRINHO FORM CEDEX-------------------------------*/
+	.cart h1 {padding: 10px;font-size: 1.2em;}
+	.box-frete .btn-continuar-c{margin-bottom: 25px;}
+	.bandeiras ul li img {margin-right: 7px;}
+	
+	.div_selos ul li a, .div_selos ul li img {width: 95px;}
 }
 
 

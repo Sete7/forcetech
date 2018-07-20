@@ -204,6 +204,11 @@ $function = new Functions();
         <div class="clear"></div>
     </div>
 </main>
+
+
+
+
+
 <div class="container">                            
     <div class="content" style="margin-bottom: 2rem;">
         <?php
@@ -220,6 +225,19 @@ $function = new Functions();
         ?>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <main class="container">
     <div class="content">

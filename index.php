@@ -1,4 +1,8 @@
-<?php require 'app/Config.inc.php'; ?>
+<?php
+require 'app/Config.inc.php';
+$usuarioController = new UsuarioController();
+$usuarioLogado = $usuarioController->IsLogginIn();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -14,6 +18,8 @@
         <link rel="stylesheet" type="text/css" href="<?= INCLUDE_PATH; ?>/css/estilo.css">
         <link href="<?= INCLUDE_PATH; ?>/css/jcarousel.responsive.css" rel="stylesheet" type="text/css"/>
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122623160-1"></script>        
     </head>
     <body>
         <!--<! ----------------------------- CABECALHO ---------------------------->
@@ -31,7 +37,17 @@
                         <div class="bem_vindo"><p>Seja Bem-vindo a Forcetech</p></div>
                         <div class="conta">
                             <div class="box_conta">
-                                <a href="<?= HOME; ?>/minha-conta"><span class="fa fa-user"></span>  Minha Conta</a>
+                                <?php
+                                if ($usuarioLogado == true):
+                                    ?>
+                                    <a href="<?= HOME; ?>/minha-conta"><i class="fas fa-key"></i>  Seja bem-vindo, <?= $_SESSION["nome"]; ?></a>
+                                    <?php
+                                else:
+                                    ?>
+                                    <a href="<?= HOME; ?>/minha-conta"><span class="fa fa-user"></span>  Minha Conta</a>
+                                <?php
+                                endif;
+                                ?>                               
                                 <a href="<?= HOME; ?>/carrinho"> <span class="fa fa-shopping-cart"></span> Carrinho de compra</a>
                             </div>
                         </div>							
@@ -243,9 +259,14 @@
                         <h1>Newsletter<span>, gostaria de receber novidades, promoções e dicas </span></h1> 
                     </div>
                     <div class="box_new_b">
-                        <form class="form_news" action="mail.php" method="post">                                                                    
+                        <form class="form_news" action="https://integracao.nitronews.com.br/integracao.php" method="post">   
+                            <input type="hidden" name="acao" value="1" />
+                            <input type="hidden" name="chave" value="419090f8af223c706d07d4e768b044d2c5f079869960a4a" />
+                            <input type="hidden" name="urlretorno" value="https://www.forcetech.com.br" />
+                            <!-- caso sua página não seja em UTF-8, remova a linha abaixo -->
+                            <input type="hidden" name="decodifica_utf8" value="1" />
                             <input type="email" name="email" class="email" required  placeholder="Digite seu Email"/>                                                                                               
-                            <input type="submit" name="submit" class="btn_newsletter" value="Enviar" />                        
+                            <input type="submit"  name="enviar" class="btn_newsletter" value="Enviar" />                        
                         </form>
                     </div>                            
                     <div class="clear"></div>
@@ -301,6 +322,10 @@
                                 <li>
                                     <a href="" class="box_selos" target="_blank"><img src="<?= INCLUDE_PATH; ?>/img/icons/ssl.jpg" alt=""/></a>
                                 </li>
+
+                                <li>
+                                    <a id="seloEbit" href="http://www.ebit.com.br/#forcetech" target="_blank" onclick="redir(this.href);"></a> <script type="text/javascript" id="getSelo" src="https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?92305"></script>
+                                </li>
                             </ul>                          
                         </div>
 
@@ -343,7 +368,7 @@
                                 </li>
 
                                 <li>
-                                    <li>
+                                <li>
                                     <a href="" class="box_selos" target="_blank"><img src="<?= INCLUDE_PATH; ?>/img/icons/ssl.jpg" alt=""/></a>
                                 </li>
                                 </li>
@@ -398,7 +423,7 @@
         </div>
 
         <script src="<?= HOME; ?>/_cdn/jquery-3.2.1.min.js"></script> 
-        <script src="<?= HOME; ?>/_cdn/jquery.jcarousel.min.js"></script>
+        <script src="<?= HOME; ?>/_cdn/jquery.jcarousel.min.js"></script>       
         <script src="<?= HOME; ?>/_cdn/slider_show.js"></script>
         <script src="<?= HOME; ?>/_cdn/menu.js"></script>
         <script src="<?= HOME; ?>/_cdn/jcarousel.responsive.js"></script>
@@ -420,9 +445,11 @@
 
         <!--busca cep-->
         <script src="<?= HOME; ?>/_cdn/buscarCep.js"></script>        
-
+        <script src="<?= REQUIRE_PATH; ?>/js/googleAnalytics.js"></script>
+        
         <div id="fb-root"></div>
-        <script>(function (d, s, id) {
+        <script>
+            (function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id))
                     return;
@@ -430,6 +457,7 @@
                 js.id = id;
                 js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0&appId=501983169994268&autoLogAppEvents=1';
                 fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
     </body>
 </html>
