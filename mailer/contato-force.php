@@ -19,7 +19,7 @@ if ($btnEnviar):
         $mailer->SMTPSecure = false; // Define se é utilizado SSL/TLS - Mantenha o valor "false"
         $mailer->SMTPAutoTLS = false; // Define se, por padrão, será utilizado TLS - Mantenha o valor "false"
         $mailer->Username = 'atendimento@forcetech.com.br'; // Conta de email existente e ativa em seu domínio
-        $mailer->Password = 'force2018'; // Senha da sua conta de email
+        $mailer->Password = ''; // Senha da sua conta de email
         // DADOS DO REMETENTE
         $mailer->Sender = "atendimento@forcetech.com.br"; // Conta de email existente e ativa em seu domínio
         $mailer->From = "atendimento@forcetech.com.br"; // Sua conta de email que será remetente da mensagem
